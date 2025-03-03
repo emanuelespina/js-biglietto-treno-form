@@ -56,10 +56,10 @@ function disconutPrice(event) {
     let disconut;
 
     if (age < 18) {
-        finalPrice = ticketPrice - (ticketPrice * 20) / 100;
+        finalPrice = ticketPrice - (ticketPrice * disconut18) / 100;
         disconut = `Il tuo sconto in quanto minorenne è del ${disconut18}%`;
     } else if (age >= 65) {
-        finalPrice = ticketPrice - (ticketPrice * 40) / 100;
+        finalPrice = ticketPrice - (ticketPrice * disconut65) / 100;
         disconut = `Il tuo sconto in quanto over 65 è del ${disconut65}%`;
     } else {
         finalPrice = ticketPrice;
