@@ -32,10 +32,10 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Creazione biglietto</a>
+                            <a class="nav-link active" href="#">Creazione biglietto</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -63,19 +63,19 @@
                     <!-- name -->
                     <div class="mb-3 col-12 col-md-6">
                         <label for="name" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="name" placeholder="Inserire il nome">
+                        <input type="text" class="form-control" id="name" placeholder="Inserire il nome" required autocomplete="off">
                     </div>
 
                     <!-- surname -->
                     <div class="mb-3 col-12 col-md-6">
                         <label for="lastName" class="form-label">Cognome</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="Inserire il cognome">
+                        <input type="text" class="form-control" id="lastName" placeholder="Inserire il cognome" required autocomplete="off">
                     </div>
 
                     <!-- age -->
                     <div class="mb-3 col-12 col-md-6">
                         <label for="age" class="form-label">Età</label>
-                        <input type="number" class="form-control" id="age" placeholder="Inserire l'età">
+                        <input type="number" class="form-control" id="age" placeholder="Inserire l'età" required autocomplete="off">
                     </div>
 
                     <!-- km -->
@@ -83,52 +83,55 @@
                         <label for="km" class="form-label">Chilometri che si intende
                             percorrere</label>
                         <input type="number" class="form-control" id="km"
-                            placeholder="Inserire il numero di chilometri">
+                            placeholder="Inserire il numero di chilometri" required autocomplete="off">
                     </div>
 
                 </div>
 
                 <div class="d-flex justify-content-evenly  mb-4">
-                    <button class="btn btn-primary">GENERA</button>
-                    <button class="btn btn-primary" id="resetButton">RESETTA</button>
+                    <button type="submit" class="btn btn-primary">GENERA</button>
+                    <button type="reset" class="btn btn-primary" id="resetButton">RESETTA</button>
                 </div>
 
             </form>
 
+            <div class="d-none" id="generatorTicket">
 
-            <div class="card border-info mb-3">
-                <div class="card-header px-5">Biglietto</div>
-                <div class="card-body py-1">
-                    <div class="row">
-                        <div class="col-12 col-md-6 px-4 mb-2">
-                            <p class="card-text m-0 p-0">Nome</p>
-                            <h5 class="card-text my-0 py-0" id="nameTicket"></h5>
-                        </div>
-                        <div class="col-6 px-4 mb-2">
-                            <p class="card-text m-0 p-0">Cognome</p>
-                            <h5 class="card-text my-0 py-0" id="lastnameTicket"></h5>
-                        </div>
-                        <div class="d-none d-md-block col-6 px-4 mb-2">
-                            <p class="card-text m-0 p-0">Età</p>
-                            <h5 class="card-text my-0 py-0" id="ageTicket"></h5>
-                        </div>
-                        <div class="col-6 px-4 mb-2">
-                            <p class="card-text m-0 p-0">Chilometri</p>
-                            <h5 class="card-text my-0 py-0" id="kmTicket"></h5>
-                        </div>
-                        <div class="d-none d-md-block col-12 px-4 mb-2">
-                            <p class="card-text my-0 py-0" id="discountTicket"></p>
+                <div class="card border-info mb-3">
+                    <div class="card-header px-5">Biglietto</div>
+                    <div class="card-body py-1">
+                        <div class="row">
+                            <div class="col-12 col-md-6 px-4 mb-2">
+                                <p class="card-text m-0 p-0">Nome</p>
+                                <h5 class="card-text my-0 py-0" id="nameTicket"></h5>
+                            </div>
+                            <div class="col-6 px-4 mb-2">
+                                <p class="card-text m-0 p-0">Cognome</p>
+                                <h5 class="card-text my-0 py-0" id="lastnameTicket"></h5>
+                            </div>
+                            <div class="d-none d-md-block col-6 px-4 mb-2">
+                                <p class="card-text m-0 p-0">Età</p>
+                                <h5 class="card-text my-0 py-0" id="ageTicket"></h5>
+                            </div>
+                            <div class="col-6 px-4 mb-2">
+                                <p class="card-text m-0 p-0">Chilometri</p>
+                                <h5 class="card-text my-0 py-0" id="kmTicket"></h5>
+                            </div>
+                            <div class="d-none d-md-block col-12 px-4 mb-2">
+                                <p class="card-text my-0 py-0" id="discountTicket"></p>
+                            </div>
                         </div>
                     </div>
+                    <div class="card-footer d-flex justify-content-between px-5">
+                        <p class="card-title">Totale</p>
+                        <h5 class="card-text my-0 py-0" id="ticketFinalPrice"></h5>
+                    </div>
                 </div>
-                <div class="card-footer d-flex justify-content-between px-5">
-                    <p class="card-title">Totale</p>
-                    <h5 class="card-text my-0 py-0" id="ticketFinalPrice"></h5>
-                </div>
-            </div>
 
-            <div class="d-flex justify-content-center my-4">
-                <button class="btn btn-primary">CONFERMA</button>
+                <div class="d-flex justify-content-center my-4">
+                    <button class="btn btn-primary">CONFERMA</button>
+                </div>
+
             </div>
 
         </div>

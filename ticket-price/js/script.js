@@ -28,6 +28,8 @@ const ticketFinalPrice = document.getElementById("ticketFinalPrice");
 
 const resetButton = document.getElementById("resetButton");
 
+const generatorTicket = document.getElementById("generatorTicket");
+
 const priceForKm = 0.21;
 
 //////////////////////////////////////////////////////////////////////
@@ -79,6 +81,10 @@ function disconutPrice(event) {
     kmTicket.innerText = kmSelect.value;
 
     discountTicket.innerText = disconut;
+
+    generatorTicket.classList.remove("d-none");
+
+    ticketFormSelect.reset();
 
 }
 
