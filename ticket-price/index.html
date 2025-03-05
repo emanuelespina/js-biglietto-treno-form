@@ -61,29 +61,93 @@
                 <div class="row py-3">
 
                     <!-- name -->
-                    <div class="mb-3 col-12 col-md-6">
-                        <label for="name" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="name" placeholder="Inserire il nome" required autocomplete="off">
+                    <div class="mb-3 col-12 col-md-4 d-flex align-items-end py-1">
+                        <div class="col-12">
+                            <label for="name" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="name" placeholder="Inserire il nome" required
+                                autocomplete="off">
+                        </div>
                     </div>
 
                     <!-- surname -->
-                    <div class="mb-3 col-12 col-md-6">
-                        <label for="lastName" class="form-label">Cognome</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="Inserire il cognome" required autocomplete="off">
+                    <div class="mb-3 col-12 col-md-4 d-flex align-items-end py-1">
+                        <div class="col-12">
+                            <label for="lastName" class="form-label">Cognome</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Inserire il cognome"
+                                required autocomplete="off">
+                        </div>
                     </div>
 
                     <!-- age -->
-                    <div class="mb-3 col-12 col-md-6">
-                        <label for="age" class="form-label">Età</label>
-                        <input type="number" class="form-control" id="age" placeholder="Inserire l'età" required autocomplete="off">
+                    <div class="mb-3 col-12 col-md-4 d-flex align-items-end py-1">
+                        <div class="col-12">
+                            <label for="age" class="form-label">Età</label>
+                            <input type="number" class="form-control" id="age" placeholder="Inserire l'età" required
+                                autocomplete="off">
+                        </div>
                     </div>
 
                     <!-- km -->
-                    <div class="mb-3 col-12 col-md-6">
-                        <label for="km" class="form-label">Chilometri che si intende
+                    <div class="mb-3 col-12 py-1">
+
+                        <p class="form-label">Seleziona le stazioni di partenza e arrivo</p>
+
+                        <!-- <label for="km" class="form-label">Chilometri che si intende
                             percorrere</label>
                         <input type="number" class="form-control" id="km"
-                            placeholder="Inserire il numero di chilometri" required autocomplete="off">
+                            placeholder="Inserire il numero di chilometri" required autocomplete="off"> -->
+
+                        <!-- alternativa con le stazioni -->
+
+                        <div class="col-12">
+
+                            <div class="row g-2">
+                                <div class="col-md">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="floatingSelectStart" required>
+                                            <option selected>Seleziona una stazione</option>
+                                            <option value="0">LECCO</option>
+                                            <option value="1">LECCO MAGGIANICO</option>
+                                            <option value="2">CALOLZIOCORTE OLGINATE</option>
+                                            <option value="3">AIRUNO</option>
+                                            <option value="4">OLGIATE-CALCO-BRIVIO</option>
+                                            <option value="5">CERNUSCO-MERATE</option>
+                                            <option value="6">OSNAGO</option>
+                                            <option value="7">CARNATE USMATE</option>
+                                            <option value="8">ARCORE</option>
+                                            <option value="9">MONZA</option>
+                                            <option value="10">SESTO S.GIOVANNI</option>
+                                            <option value="11">MILANO GRECO PIRELLI</option>
+                                            <option value="12">MILANO PORTA GARIBALDI</option>
+                                        </select>
+                                        <label for="floatingSelectStart">Stazione di partenza</label>
+                                    </div>
+                                </div>
+                                <div class="col-md">
+                                    <div class="form-floating">
+                                        <select class="form-select" id="floatingSelectEnd" required>
+                                            <option selected>Seleziona una stazione</option>
+                                            <option value="0">LECCO</option>
+                                            <option value="1">LECCO MAGGIANICO</option>
+                                            <option value="2">CALOLZIOCORTE OLGINATE</option>
+                                            <option value="3">AIRUNO</option>
+                                            <option value="4">OLGIATE-CALCO-BRIVIO</option>
+                                            <option value="5">CERNUSCO-MERATE</option>
+                                            <option value="6">OSNAGO</option>
+                                            <option value="7">CARNATE USMATE</option>
+                                            <option value="8">ARCORE</option>
+                                            <option value="9">MONZA</option>
+                                            <option value="10">SESTO S.GIOVANNI</option>
+                                            <option value="11">MILANO GRECO PIRELLI</option>
+                                            <option value="12">MILANO PORTA GARIBALDI</option>
+                                        </select>
+                                        <label for="floatingSelectEnd">Stazione di arrivo</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
 
                 </div>
@@ -94,6 +158,10 @@
                 </div>
 
             </form>
+
+            <div class="d-flex justify-content-center">
+                <span class="d-none badge text-bg-danger">Devi inserire due stazioni diverse premi RESETTA</span>
+            </div>
 
             <div class="d-none" id="generatorTicket">
 
@@ -109,16 +177,20 @@
                                 <p class="card-text m-0 p-0">Cognome</p>
                                 <h5 class="card-text my-0 py-0" id="lastnameTicket"></h5>
                             </div>
-                            <div class="d-none d-md-block col-6 px-4 mb-2">
+                            <div class="d-none d-md-block col-2 px-4 mb-2">
                                 <p class="card-text m-0 p-0">Età</p>
                                 <h5 class="card-text my-0 py-0" id="ageTicket"></h5>
                             </div>
-                            <div class="col-6 px-4 mb-2">
-                                <p class="card-text m-0 p-0">Chilometri</p>
-                                <h5 class="card-text my-0 py-0" id="kmTicket"></h5>
+                            <div class="col-10 px-4 mb-2 d-flex justify-content-center align-items-end">
+                                <!-- <p class="card-text m-0 p-0">Chilometri</p>
+                                <h5 class="card-text my-0 py-0" id="kmTicket"></h5> -->
+                                <p class="card-text my-0 py-0 align-items-end" id="summary"></p>
                             </div>
-                            <div class="d-none d-md-block col-12 px-4 mb-2">
+                            <div class="d-none d-md-block col-md-12 px-4 mb-2">
                                 <p class="card-text my-0 py-0" id="discountTicket"></p>
+                            </div>
+                            <div class="col-12 col-md-7 px-4 mb-2">
+
                             </div>
                         </div>
                     </div>
