@@ -110,6 +110,8 @@ resetButton.addEventListener("click", function () {
     alertBadge.classList.add("d-none");
 })
 
+// per fare questo reset doivrei andare ad annullare tutti i parametri assegnando con la stringa vuota 
+
 
 /////////////////////////// FUNCTION /////////////////////////////////
 
